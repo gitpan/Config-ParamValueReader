@@ -2,3 +2,5 @@ MANIFEST
 Makefile.PL
 ParamValueReader.pm
 README
+test.cfg
+test.pl
