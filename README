@@ -1,0 +1,31 @@
+This package contains meathods for reading a basic config file into a hash.
+
+This script will skip empty lines or lines starting with a semicolon (;) It will recognise anything after a semicolon as a comment on any line.
+
+Entree's should be given in the Param = Value format:
+
+Name = "Bob"
+
+If only a parameter is specified it will be given a value of 1;
+
+Multiple values can be specified by comma seperation
+
+Names = "Bob","Ted","Mary"
+
+Quotes are optional:
+
+Names = "Bob",Ted,Mary,"Jane"
+
+
+The Param = Value options will be read into a hash, the parameter is th ehash key and the value is an array.
+
+If one value is specified it will be element 0 of the referenced array in the hash, if multiple values are specified they will be recognised as sequential elements of the array.
+
+Parameters are not checked against any list, all entered param's and values will be placed int eh hash, it is up to you to access/remove/modify them after the file is read.
+
+-----Methods
+
+Opens a config file and reads the information into a hash
+Param 0, path to config file
+Param 1, reference to hash.
+sub ReadConfig($$)
